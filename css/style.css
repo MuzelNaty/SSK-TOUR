@@ -10,7 +10,7 @@ body {
 }
 
 .site-nav {
-    background-color: #333;
+    background-color: #05aff2;
     color: #fff;
     padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -41,7 +41,7 @@ body {
 
 .site-menu li {
     position: relative;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 .site-menu a {
@@ -52,19 +52,8 @@ body {
 }
 
 .site-menu a:hover {
-    background-color: #555;
+    background-color: #79C4F2;
     color: #fff;
-}
-
-.dropdown {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    list-style: none;
-    padding: 10px 0;
-    margin: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .site-menu li:hover .dropdown {
@@ -83,10 +72,10 @@ body {
 }
 
 .dropdown a:hover {
-    background-color: #555;
+    background-color: #79C4F2;
 }
 
 .site-menu .active a {
-    background-color: #555;
+    background-color: #79C4F2;
     color: #fff;
 }
