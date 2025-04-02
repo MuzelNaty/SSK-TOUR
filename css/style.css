@@ -1,4 +1,3 @@
-/* || ESTILOS GERAIS */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +9,6 @@ body {
     background-color: #f4f4f4;
 }
 
-/* || NAVEGAÇÃO */
 .site-nav {
     background-color: #1A374D;
     color: #fff;
@@ -57,7 +55,6 @@ body {
     background-color: #79C4F2;
 }
 
-/* || SEÇÃO HERO */
 .hero {
     padding: 7rem 0 10rem 0;
     background: #6998AB;
@@ -110,7 +107,6 @@ body {
     z-index: 1;
 }
 
-/* || FORMULÁRIOS */
 .form-control,
 .custom-select {
     border: 2px solid #e9ecef;
@@ -125,7 +121,6 @@ body {
 }
 
 
-/* || BOTÕES */
 .btn {
     padding: 12px 30px;
     border-radius: 30px;
@@ -156,7 +151,6 @@ body {
     color: #1A374D !important;
 }
 
-/* || OUTROS ESTILOS */
 .hero h1 .typed-words {
     position: relative;
 }
@@ -170,13 +164,11 @@ body {
     right: 0;
 }
 
-/* || IMAGENS */
 .img-fluid {
     max-width: 100%;
     height: auto;
 }
 
-/* || TABELAS */
 .table {
     width: 100%;
     margin-bottom: 1rem;
@@ -196,7 +188,6 @@ body {
     border-bottom: 2px solid #dee2e6;
 }
 
-/* || ALERTAS */
 .alert {
     position: relative;
     padding: .75rem 1.25rem;
@@ -223,7 +214,6 @@ body {
     border-color: #f5c6cb;
 }
 
-/* || BREADCRUMB */
 .breadcrumb {
     display: flex;
     flex-wrap: wrap;
@@ -239,7 +229,6 @@ body {
     padding: 0 5px;
 }
 
-/* || CARDS */
 .card {
     position: relative;
     display: flex;
@@ -257,7 +246,6 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
-/* || MODAL */
 .modal {
     position: fixed;
     top: 0;
@@ -275,7 +263,6 @@ body {
     margin: 1.75rem auto;
 }
 
-/* || FANCYBOX */
 .fancybox-container {
     position: fixed;
     top: 0;
@@ -295,7 +282,6 @@ body {
     opacity: .9;
 }
 
-/* || ANIMAÇÕES */
 .fade {
     transition: opacity .15s linear;
 }
@@ -304,7 +290,6 @@ body {
     opacity: 0;
 }
 
-/* || RESPONSIVIDADE */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 45px;
