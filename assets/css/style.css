@@ -184,7 +184,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding-top: 61px;
+  padding-top: 50px;
   z-index: 4;
 }
 
@@ -232,7 +232,6 @@ body {
 
 .header-top .logo img {
   width: 237px;
-  height: 80px;
 }
 
 .header-btn-group {
