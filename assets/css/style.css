@@ -10,6 +10,7 @@
   --gunmetal: hsl(206, 34%, 20%);
   --gainsboro: hsl(0, 0%, 88%);
   --cultured: hsl(0, 0%, 98%);
+  --golden: hsl(40, 77%, 76%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
   --onyx: hsl(0, 0%, 25%);
@@ -351,7 +352,7 @@ body {
 }
 
 .navbar-link:is(:hover, :focus) {
-  color: hsl(40, 77%, 76%);
+  color: var(--golden);
 }
 
 .overlay {
