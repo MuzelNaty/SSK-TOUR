@@ -231,7 +231,8 @@ body {
 }
 
 .header-top .logo img {
-  max-width: 100px;
+  width: 237px;
+  height: 80px;
 }
 
 .header-btn-group {
