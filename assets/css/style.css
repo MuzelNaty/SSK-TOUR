@@ -253,9 +253,6 @@ body {
   font-size: 20px;
 }
 
-.header-bottom {
-  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
-}
 
 .header-bottom .container {
   display: flex;
