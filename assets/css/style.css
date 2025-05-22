@@ -196,7 +196,7 @@ body {
   width: 100%;
   transition: var(--transition);
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
-  padding-block: 15px;
+  padding-block: 5px; /*linha header*/
   z-index: 1;
 }
 
