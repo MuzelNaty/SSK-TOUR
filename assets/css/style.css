@@ -352,7 +352,7 @@ body {
 }
 
 .navbar-link:is(:hover, :focus) {
-  color: var(--golden);
+  color: var(--bright-navy-blue);
 }
 
 .overlay {
