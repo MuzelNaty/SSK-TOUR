@@ -20,7 +20,8 @@
   <style>
     .header {
       background-color: #4a90e2;
-      padding: 42px;
+      transition: none !important;
+      padding: 10px;
       /* Grande por padrão */
       color: white;
       text-align: center;
@@ -54,6 +55,23 @@
         font-size: 1rem;
       }
     }
+
+    /* Espaço para o conteúdo não ficar por baixo do header fixo */
+    main {
+      padding-top: 60px; /* valor base para cabeçalho grande */
+    }
+
+    @media (min-width: 481px) and (max-width: 1024px) {
+      main {
+        padding-top: 50px; /* ajuste para cabeçalho médio */
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding-top: 40px; /* ajuste para cabeçalho pequeno */
+      }
+    }
   </style>
 
   <!-- header -->
@@ -71,26 +89,31 @@
     <div class="header-bottom">
       <div class="container">
         <nav class="navbar" data-navbar>
-          <div class="header-top">
-            <div class="container">
-              <nav class="navbar" data-navbar>
-                <ul class="navbar-list">
-                  <li>
-                    <a href="index.html" class="navbar-link" data-nav-link>Início</a>
-                  </li>
-                  <li>
-                    <a href="hospedagem.html" class="navbar-link" data-nav-link>Hospedagem</a>
-                  </li>
-                  <li>
-                    <a href="#" class="navbar-link" data-nav-link>Destinos</a>
-                  </li>
-                  <li>
-                    <a href="#" class="navbar-link" data-nav-link>Contato</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+          <div class="navbar-top">
+            <a href="#" class="logo">
+              <img src="./assets/imagens/logoAzul.png" alt="Tourly logo">
+            </a>
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
           </div>
+          <ul class="navbar-list">
+            <li>
+              <a href="index.html" class="navbar-link" data-nav-link>Início</a>
+            </li>
+            <li>
+              <a href="hospedagem.html" class="navbar-link" data-nav-link>Hospedagem</a>
+            </li>
+            <li>
+              <a href="destinos.html" class="navbar-link" data-nav-link>Destinos</a>
+            </li>
+            <li>
+              <a href="#" class="navbar-link" data-nav-link>Contato</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -99,7 +122,7 @@
 
 
       <!-- desconto -->
-      <section class="package" id="package" style="margin-top: 50px;">
+      <section class="package" id="package" style="margin-top: 20px;">
         <div class="container">
           <h2 class="h2 section-title">Principais destinos</h2>
           <p class="section-text">
