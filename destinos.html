@@ -1,339 +1,399 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destinos</title>
-    <link rel="shortcut icon" href="./assets/imagens/favicon.png" type="image/svg+xml">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
 
-  <body id="top">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinos</title>
+  <link rel="shortcut icon" href="./assets/imagens/favicon.png" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
 
-    <style>
+<body id="top">
+
+  <style>
     .header {
       background-color: #4a90e2;
-      padding: 40px;
+      transition: none !important;
+      padding: 10px;
+      /* Grande por padrão */
       color: white;
       text-align: center;
       font-size: 1.5rem;
       position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 481px) and (max-width: 1024px) {
+      .header {
+        padding: 10px;
+        /* padding menor e mais fino */
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Reduz apenas quando a tela for menor que 768px */
+    @media (max-width: 768px) {
+      .header {
+        padding: 10px;
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        padding: 5px;
+        font-size: 1rem;
+      }
+    }
+
+    /* Espaço para o conteúdo não ficar por baixo do header fixo */
+    main {
+      padding-top: 60px; /* valor base para cabeçalho grande */
+    }
+
+    @media (min-width: 481px) and (max-width: 1024px) {
+      main {
+        padding-top: 50px; /* ajuste para cabeçalho médio */
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding-top: 40px; /* ajuste para cabeçalho pequeno */
+      }
     }
   </style>
 
-    <!-- header -->
-    <header class="header" data-header>
-      <div class="overlay" data-overlay></div>
-      <div class="header-top">
-        <div class="container">
-          <div class="header-btn-group">
-            <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
-              <ion-icon name="menu-outline"></ion-icon>
+  <!-- header -->
+  <header class="header" data-header>
+    <div class="overlay" data-overlay></div>
+    <div class="header-top">
+      <div class="container">
+        <div class="header-btn-group">
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <div class="container">
+        <nav class="navbar" data-navbar>
+          <div class="navbar-top">
+            <a href="#" class="logo">
+              <img src="./assets/imagens/logoAzul.png" alt="Tourly logo">
+            </a>
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
             </button>
           </div>
-        </div>
-      </div>
-      <div class="header-bottom">
-        <div class="container">
-          <nav class="navbar" data-navbar>
-            <div class="header-top">
-                <div class="container">
-                    <nav class="navbar" data-navbar>
-                        <ul class="navbar-list">
-                            <li>
-                                <a href="index.html" class="navbar-link" data-nav-link>Início</a>
-                              </li>
-                              <li>
-                                <a href="hospedagem.html" class="navbar-link" data-nav-link>Hospedagem</a>
-                              </li>
-                              <li>
-                                <a href="#" class="navbar-link" data-nav-link>Destinos</a>
-                              </li>
-                              <li>
-                                <a href="#" class="navbar-link" data-nav-link>Contato</a>
-                              </li> 
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-    </header>
-
-    <main>
-      <article>
-        <!-- hero -->
-
-
-        <!-- desconto -->
-        <section class="package" id="package" style="margin-top: 50px;">
-          <div class="container">
-            <h2 class="h2 section-title">Principais destinos</h2>
-            <p class="section-text">
-              Destinos para uma viagem inesquecível com experiências únicas e inclusivas.
-            </p>
-            <ul class="package-list">
-
-              <li>
-                <div class="package-card">
-                  <figure class="card-banner">
-                    <img src="./assets/imagens/amantikirCJ.jpg" alt="Experience The Great Holiday On Beach" loading="lazy">
-                  </figure>
-                  <div class="card-content">
-                    <h3 class="h3 card-title">Casagrande Olímpia Hotel</h3>
-                    <p class="card-text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor tincidunt, vel feugiat nisl tempor.
-                    </p>
-                    <ul class="card-meta-list">
-                      <li class="card-meta-item">
-                        <div class="meta-box">
-                          <ion-icon name="time"></ion-icon>
-                          <p class="text">7 dias</p>
-                        </div>
-                      </li>
-                      <li class="card-meta-item">
-                        <div class="meta-box">
-                          <ion-icon name="people"></ion-icon>
-                          <p class="text">10 pessoas</p>
-                        </div>
-                      </li>
-                      <li class="card-meta-item">
-                        <div class="meta-box">
-                          <ion-icon name="location"></ion-icon>
-                          <p class="text">São Paulo</p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="card-price">
-                    <div class="wrapper">
-                      <p class="reviews">(25 comentários)</p>
-                      <div class="card-rating">
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                      </div>
-                    </div>
-                    <p class="price">
-                      R$ 270
-                      <span>/ por noite</span>
-                    </p>
-                    <button class="btn btn-secondary">Veja mais</button>
-                  </div>
-                </div>
-              </li>
-
-            </ul>
-            <button class="btn btn-primary">Veja mais</button>
-          </div>
-        </section>
-
-        <!-- destinos -->
-        <section class="popular" id="destination">
-          <div class="container">
-            <p class="section-subtitle">Pontos turísticos</p>
-            <h2 class="h2 section-title">Destinos mais procurados</h2>
-            <p class="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor tincidunt, vel feugiat nisl tempor.
-            </p>
-            <ul class="popular-list">
-
-              <li>
-                <div class="popular-card">
-                  <figure class="card-img">
-                    <img src="./assets/imagens/thermasO.jpg" alt="San miguel, italy" loading="lazy">
-                  </figure>
-                  <div class="card-content">
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-                    <p class="card-subtitle">
-                      <a href="#">Parque Aquático</a>
-                    </p>
-                    <h3 class="h3 card-title">
-                      <a href="#">Thermas Laranjais</a>
-                    </h3>
-                    <p class="card-text">
-                      O Thermas dos Laranjais é o 2º parque aquático mais visitado do mundo.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="popular-card">
-                  <figure class="card-img">
-                    <img src="./assets/imagens/duchaCJ.jpg" alt="San miguel, italy" loading="lazy">
-                  </figure>
-                  <div class="card-content">
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-                    <p class="card-subtitle">
-                      <a href="#">Cachoeira</a>
-                    </p>
-                    <h3 class="h3 card-title">
-                      <a href="#">Ducha de Prata</a>
-                    </h3>
-                    <p class="card-text">
-                      Diversas cachoeiras e quedas d'água artificiais acessadas por decks.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="popular-card">
-                  <figure class="card-img">
-                    <img src="./assets/imagens/jaymeV.png" alt="San miguel, italy" loading="lazy">
-                  </figure>
-                  <div class="card-content">
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-                    <p class="card-subtitle">
-                      <a href="#">Parque</a>
-                    </p>
-                    <h3 class="h3 card-title">
-                      <a href="#">Jayme Ferragut</a>
-                    </h3>
-                    <p class="card-text">
-                      Local onde são realizados os maiores eventos da cidade, festivais e encontros.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-            </ul>
-            <button class="btn btn-primary">Veja mais</button>
-          </div>
-        </section>
-
-        <!-- galeria -->
-        <section class="gallery" id="gallery">
-          <div class="container">
-            <p class="section-subtitle">Galeria de fotos</p>
-            <h2 class="h2 section-title">Inspire-se para sua próxima viagem</h2>
-            <p class="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor tincidunt, vel feugiat nisl tempor.
-            </p>
-            <ul class="gallery-list">
-              <li class="gallery-item">
-                <figure class="gallery-image">
-                  <img src="./assets/imagens/gallery-1.jpg" alt="Gallery image">
-                </figure>
-              </li>
-              <li class="gallery-item">
-                <figure class="gallery-image">
-                  <img src="./assets/imagens/gallery-2.jpg" alt="Gallery image">
-                </figure>
-              </li>
-              <li class="gallery-item">
-                <figure class="gallery-image">
-                  <img src="./assets/imagens/gallery-3.jpg" alt="Gallery image">
-                </figure>
-              </li>
-              <li class="gallery-item">
-                <figure class="gallery-image">
-                  <img src="./assets/imagens/gallery-4.jpg" alt="Gallery image">
-                </figure>
-              </li>
-              <li class="gallery-item">
-                <figure class="gallery-image">
-                  <img src="./assets/imagens/gallery-5.jpg" alt="Gallery image">
-                </figure>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-      </article>
-    </main>
-
-    <!-- footer -->
-    <footer class="footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="footer-brand">
-            <a href="#" class="logo">
-              <img src="./assets/imagens/logo.svg" alt="Tourly logo">
-            </a>
-            <p class="footer-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor tincidunt, vel feugiat nisl tempor. Integer nec risus id nisi tempor varius ac nec nisi. Sed vitae volutpat odio. Aenean luctus justo vel velit dapibus, et feugiat nisi vehicula.
-            </p>
-          </div>
-          <div class="footer-contact">
-            <h4 class="contact-title">Contato</h4>
-            <p class="contact-text">
-              Se precisar de ajuda, fale conosco!
-            </p>
-            <ul>
-              <li class="contact-item">
-                <ion-icon name="call-outline"></ion-icon>
-                <a href="tel:+01123456790" class="contact-link">+55 16 99999-9999</a>
-              </li>
-              <li class="contact-item">
-                <ion-icon name="mail-outline"></ion-icon>
-                <a href="mailto:info.tourly.com" class="contact-link">ssktour@contato.com.br</a>
-              </li>
-              <li class="contact-item">
-                <ion-icon name="location-outline"></ion-icon>
-                <address>Rua Maranhão, 1225</address>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-form">
-            <p class="form-text">
-              Fique por dentro de todas as novidades
-            </p>
-            <form action="" class="form-wrapper">
-              <input type="email" name="email" class="input-field" placeholder="Digite seu e-mail" required>
-              <button type="submit" class="btn btn-secondary">Cadastrar</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <p class="copyright">
-            &copy; 2025 <a href="">Todos os direitos reservados</a>. 
-          </p>
-          <ul class="footer-bottom-list">
+          <ul class="navbar-list">
             <li>
-              <a href="#" class="footer-bottom-link">Política de Privacidade</a>
+              <a href="index.html" class="navbar-link" data-nav-link>Início</a>
             </li>
             <li>
-              <a href="#" class="footer-bottom-link">Termos e Condições</a>
+              <a href="hospedagem.html" class="navbar-link" data-nav-link>Hospedagem</a>
+            </li>
+            <li>
+              <a href="destinos.html" class="navbar-link" data-nav-link>Destinos</a>
+            </li>
+            <li>
+              <a href="#" class="navbar-link" data-nav-link>Contato</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- hero -->
+
+
+      <!-- desconto -->
+      <section class="package" id="package" style="margin-top: 20px;">
+        <div class="container">
+          <h2 class="h2 section-title">Principais destinos</h2>
+          <p class="section-text">
+            Destinos para uma viagem inesquecível com experiências únicas e inclusivas.
+          </p>
+          <ul class="package-list">
+
+            <li>
+              <div class="package-card">
+                <figure class="card-banner">
+                  <img src="./assets/imagens/amantikirCJ.jpg" alt="Experience The Great Holiday On Beach"
+                    loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <h3 class="h3 card-title">Casagrande Olímpia Hotel</h3>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor
+                    tincidunt, vel feugiat nisl tempor.
+                  </p>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+                        <p class="text">7 dias</p>
+                      </div>
+                    </li>
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+                        <p class="text">10 pessoas</p>
+                      </div>
+                    </li>
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="location"></ion-icon>
+                        <p class="text">São Paulo</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-price">
+                  <div class="wrapper">
+                    <p class="reviews">(25 comentários)</p>
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </div>
+                  <p class="price">
+                    R$ 270
+                    <span>/ por noite</span>
+                  </p>
+                  <button class="btn btn-secondary">Veja mais</button>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+          <button class="btn btn-primary">Veja mais</button>
+        </div>
+      </section>
+
+      <!-- destinos -->
+      <section class="popular" id="destination">
+        <div class="container">
+          <p class="section-subtitle">Pontos turísticos</p>
+          <h2 class="h2 section-title">Destinos mais procurados</h2>
+          <p class="section-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor tincidunt,
+            vel feugiat nisl tempor.
+          </p>
+          <ul class="popular-list">
+
+            <li>
+              <div class="popular-card">
+                <figure class="card-img">
+                  <img src="./assets/imagens/thermasO.jpg" alt="San miguel, italy" loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                  <p class="card-subtitle">
+                    <a href="#">Parque Aquático</a>
+                  </p>
+                  <h3 class="h3 card-title">
+                    <a href="#">Thermas Laranjais</a>
+                  </h3>
+                  <p class="card-text">
+                    O Thermas dos Laranjais é o 2º parque aquático mais visitado do mundo.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+                <figure class="card-img">
+                  <img src="./assets/imagens/duchaCJ.jpg" alt="San miguel, italy" loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                  <p class="card-subtitle">
+                    <a href="#">Cachoeira</a>
+                  </p>
+                  <h3 class="h3 card-title">
+                    <a href="#">Ducha de Prata</a>
+                  </h3>
+                  <p class="card-text">
+                    Diversas cachoeiras e quedas d'água artificiais acessadas por decks.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+                <figure class="card-img">
+                  <img src="./assets/imagens/jaymeV.png" alt="San miguel, italy" loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                  <p class="card-subtitle">
+                    <a href="#">Parque</a>
+                  </p>
+                  <h3 class="h3 card-title">
+                    <a href="#">Jayme Ferragut</a>
+                  </h3>
+                  <p class="card-text">
+                    Local onde são realizados os maiores eventos da cidade, festivais e encontros.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+          <button class="btn btn-primary">Veja mais</button>
+        </div>
+      </section>
+
+      <!-- galeria -->
+      <section class="gallery" id="gallery">
+        <div class="container">
+          <p class="section-subtitle">Galeria de fotos</p>
+          <h2 class="h2 section-title">Inspire-se para sua próxima viagem</h2>
+          <p class="section-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor tincidunt,
+            vel feugiat nisl tempor.
+          </p>
+          <ul class="gallery-list">
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="./assets/imagens/gallery-1.jpg" alt="Gallery image">
+              </figure>
+            </li>
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="./assets/imagens/gallery-2.jpg" alt="Gallery image">
+              </figure>
+            </li>
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="./assets/imagens/gallery-3.jpg" alt="Gallery image">
+              </figure>
+            </li>
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="./assets/imagens/gallery-4.jpg" alt="Gallery image">
+              </figure>
+            </li>
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="./assets/imagens/gallery-5.jpg" alt="Gallery image">
+              </figure>
             </li>
           </ul>
         </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="./assets/imagens/logo.svg" alt="Tourly logo">
+          </a>
+          <p class="footer-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor tincidunt,
+            vel feugiat nisl tempor. Integer nec risus id nisi tempor varius ac nec nisi. Sed vitae volutpat odio.
+            Aenean luctus justo vel velit dapibus, et feugiat nisi vehicula.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <h4 class="contact-title">Contato</h4>
+          <p class="contact-text">
+            Se precisar de ajuda, fale conosco!
+          </p>
+          <ul>
+            <li class="contact-item">
+              <ion-icon name="call-outline"></ion-icon>
+              <a href="tel:+01123456790" class="contact-link">+55 16 99999-9999</a>
+            </li>
+            <li class="contact-item">
+              <ion-icon name="mail-outline"></ion-icon>
+              <a href="mailto:info.tourly.com" class="contact-link">ssktour@contato.com.br</a>
+            </li>
+            <li class="contact-item">
+              <ion-icon name="location-outline"></ion-icon>
+              <address>Rua Maranhão, 1225</address>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-form">
+          <p class="form-text">
+            Fique por dentro de todas as novidades
+          </p>
+          <form action="" class="form-wrapper">
+            <input type="email" name="email" class="input-field" placeholder="Digite seu e-mail" required>
+            <button type="submit" class="btn btn-secondary">Cadastrar</button>
+          </form>
+        </div>
       </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; 2025 <a href="">Todos os direitos reservados</a>.
+        </p>
+        <ul class="footer-bottom-list">
+          <li>
+            <a href="#" class="footer-bottom-link">Política de Privacidade</a>
+          </li>
+          <li>
+            <a href="#" class="footer-bottom-link">Termos e Condições</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
-    <!-- go to top -->
-    <a href="#top" class="go-top" data-go-top>
-      <ion-icon name="chevron-up-outline"></ion-icon>
-    </a>
+  <!-- go to top -->
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
 
-    <script src="./assets/js/script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  </body>
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
 
 </html>
