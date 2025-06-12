@@ -6,83 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SSK TOUR</title>
     <link rel="shortcut icon" href="./assets/imagens/icon.png" type="image/svg+xml">
-    <link rel="stylesheet" href="./assets/css/outros.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
-  <body id="top">
 
+  <body id="top">
     <!-- header -->
     <header class="header" data-header>
       <div class="overlay" data-overlay></div>
       <div class="header-top">
         <div class="container">
+          <a href="#" class="logo">
+            <img src="./assets/imagens/logoBranco.png" alt="Tourly logo">
+          </a>
           <div class="header-btn-group">
             <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
               <ion-icon name="menu-outline"></ion-icon>
             </button>
           </div>
         </div>
-        <nav class="navbar" data-navbar>
-          <div class="navbar-top">
-            <a href="#" class="logo">
-              <img src="./assets/imagens/logoAzul.png" alt="Tourly logo">
-            </a>
-          </div>
-          <ul class="navbar-list">
-            <li>
-              <a href="index.html" class="navbar-link" data-nav-link>Início</a>
-            </li>
-            <li>
-              <a href="hospedagem.html" class="navbar-link" data-nav-link>Hospedagem</a>
-            </li>
-            <li>
-              <a href="destinos.html" class="navbar-link" data-nav-link>Destinos</a>
-            </li>
-            <li>
-              <a href="#" class="navbar-link" data-nav-link>Contato</a>
-            </li>
-          </ul>
-        </nav>
+      </div>
+      <div class="header-bottom">
+        <div class="container">
+          <nav class="navbar" data-navbar>
+            <div class="navbar-top">
+              <a href="#" class="logo">
+                <img src="./assets/imagens/logoAzul.png" alt="Tourly logo">
+              </a>
+              <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+            <ul class="navbar-list">
+              <li>
+                <a href="index.html" class="navbar-link" data-nav-link>Início</a>
+              </li>
+              <li>
+                <a href="hotel.html" class="navbar-link" data-nav-link>Hospedagem</a>
+              </li>
+              <li>
+                <a href="destinos.html" class="navbar-link" data-nav-link>Destinos</a>
+              </li>
+              <li>
+                <a href="index.html" class="navbar-link" data-nav-link>Contato</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
 
     <main>
       <article>
-        <!-- desconto -->
+        <!-- hero -->
+        <section class="hero" id="home">
+        </section>
+
+        <!-- hotel -->
         <section class="package" id="package">
           <div class="container">
-            <h2 class="h2 section-title">Descontos</h2>
+            <h2 class="h2 section-title">Hotéis com desconto</h2>
             <p class="section-text">
-              Explore os pacotes com desconto do mês!
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor tincidunt, vel feugiat nisl tempor.
             </p>
             <ul class="package-list">
 
               <li>
                 <div class="package-card">
                   <figure class="card-banner">
-                    <img src="./assets/imagens/São Paulo/Aquário de São Paulo/Cozzy Suites/entrada.jpg" alt="Experience The Great Holiday On Beach"
-                      loading="lazy">
+                    <img src="./assets/imagens/exemplo.png" alt="Experience The Great Holiday On Beach" loading="lazy">
                   </figure>
                   <div class="card-content">
-                    <h3 class="h3 card-title">Cozzy Suites Paraíso Hotel</h3>
+                    <h3 class="h3 card-title">Hotel top</h3>
                     <p class="card-text">
-                      Localizado em São Paulo, a 2,9 km do Pavilhão Ciccillo Matarazzo, o Cozzy Suites Paraíso Hotel oferece acomodações com piscina ao ar livre, estacionamento privativo, academia e jardim.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor tincidunt, vel feugiat nisl tempor.
                     </p>
                     <ul class="card-meta-list">
                       <li class="card-meta-item">
                         <div class="meta-box">
                           <ion-icon name="time"></ion-icon>
-                          <p class="text">3 dias</p>
+                          <p class="text">7 dias</p>
                         </div>
                       </li>
                       <li class="card-meta-item">
                         <div class="meta-box">
                           <ion-icon name="people"></ion-icon>
-                          <p class="text">5 pessoas</p>
+                          <p class="text">10 pessoas</p>
                         </div>
                       </li>
                       <li class="card-meta-item">
@@ -95,7 +106,6 @@
                   </div>
                   <div class="card-price">
                     <div class="wrapper">
-                      <p class="reviews">(25 comentários)</p>
                       <div class="card-rating">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -106,70 +116,157 @@
                     </div>
                     <p class="price">
                       R$ 150
-                      <span>/ por noite</span>
+                      <span> por noite</span>
                     </p>
-                    <button class="btn btn-secondary">Reservar</button>
+                    <button class="btn btn-secondary">Reserve</button>
                   </div>
                 </div>
               </li>
 
+              <h2 class="h2 section-title">São Paulo</h2>
+            <p class="section-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor tincidunt, vel feugiat nisl tempor.
+            </p>
+
+              <ul class="popular-list">
               <li>
-                <div class="package-card">
-                  <figure class="card-banner">
-                    <img src="./assets/imagens/Campos do Jordão/Palácio boa vista/Pousada alto da boa vista/entrada.jpg" alt="Experience The Great Holiday On Beach"
-                      loading="lazy">
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src="./assets/imagens/exemplo.png" alt="San miguel, italy" loading="lazy">
                   </figure>
                   <div class="card-content">
-                    <h3 class="h3 card-title">Pousada Alto Boa Vista</h3>
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">
+                      <a href="#">Hotel 1</a>
+                    </h3>
                     <p class="card-text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor
-                      tincidunt, vel feugiat nisl tempor.
+                      Lorem ipsum dolor sit amet.
                     </p>
                     <ul class="card-meta-list">
                       <li class="card-meta-item">
                         <div class="meta-box">
                           <ion-icon name="time"></ion-icon>
-                          <p class="text">5 dias</p>
+                          <p class="text">7 dias</p>
                         </div>
                       </li>
                       <li class="card-meta-item">
                         <div class="meta-box">
                           <ion-icon name="people"></ion-icon>
-                          <p class="text">2 pessoas</p>
+                          <p class="text">10 pessoas</p>
                         </div>
                       </li>
                       <li class="card-meta-item">
                         <div class="meta-box">
                           <ion-icon name="location"></ion-icon>
-                          <p class="text">Campos do Jordão</p>
+                          <p class="text">São Paulo</p>
                         </div>
                       </li>
                     </ul>
                   </div>
-                  <div class="card-price">
-                    <div class="wrapper">
-                      <p class="reviews">(25 comentários)</p>
-                      <div class="card-rating">
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                      </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src="./assets/imagens/exemplo.png" alt="San miguel, italy" loading="lazy">
+                  </figure>
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
                     </div>
-                    <p class="price">
-                      R$ 270
-                      <span>/ por noite</span>
+                    <h3 class="h3 card-title">
+                      <a href="#">Hotel 2</a>
+                    </h3>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet.
                     </p>
-                    <button class="btn btn-secondary">Veja mais</button>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+                          <p class="text">7 dias</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+                          <p class="text">10 pessoas</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+                          <p class="text">São Paulo</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src="./assets/imagens/exemplo.png" alt="San miguel, italy" loading="lazy">
+                  </figure>
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">
+                      <a href="#">Hotel 3</a>
+                    </h3>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet.
+                    </p>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+                          <p class="text">7 dias</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+                          <p class="text">10 pessoas</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+                          <p class="text">São Paulo</p>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </li>
 
             </ul>
+
+            </ul>
             <button class="btn btn-primary">Veja mais</button>
           </div>
         </section>
+
+      </article>
+    </main>
 
     <!-- footer -->
     <footer class="footer">
@@ -180,9 +277,7 @@
               <img src="./assets/imagens/logoBranco.png" alt="Tourly logo">
             </a>
             <p class="footer-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor tincidunt,
-              vel feugiat nisl tempor. Integer nec risus id nisi tempor varius ac nec nisi. Sed vitae volutpat odio.
-              Aenean luctus justo vel velit dapibus, et feugiat nisi vehicula.
+              A SSK Tour é uma agência de turismo especializada em acessibilidade. Nosso compromisso é proporcionar experiências de viagem que atendam às necessidades de todos, sem abrir mão de qualidade e segurança.
             </p>
           </div>
           <div class="footer-contact">
@@ -219,7 +314,7 @@
       <div class="footer-bottom">
         <div class="container">
           <p class="copyright">
-            &copy; 2025 <a href="">Todos os direitos reservados</a>.
+            &copy; 2025 <a href="">Todos os direitos reservados</a>. 
           </p>
           <ul class="footer-bottom-list">
             <li>
