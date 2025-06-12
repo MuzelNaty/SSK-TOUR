@@ -2,24 +2,40 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Destinos</title>
-  <link rel="shortcut icon" href="./assets/imagens/favicon.png" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" href="./assets/imagens/favicon.png" type="image/svg+xml" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-</head>
-
-<body id="top">
+    rel="stylesheet" />
 
   <style>
+    /* Header Top styles adjusted for white background and subtle translucent border */
+    .header-top {
+      background-color: #ffffff;
+      /* solid white background to avoid blue tint */
+      position: fixed;
+      /* fix header at top */
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+      /* subtle translucent white bottom line */
+      padding-block: 5px;
+      /* vertical padding */
+      z-index: 100;
+      /* place above page content */
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      /* subtle shadow for visual separation */
+    }
+
     .header {
-      background-color: #4a90e2;
+      background-color: #ffffff;
       transition: none !important;
       padding: 10px;
       /* Grande por padrão */
@@ -31,6 +47,17 @@
       top: 0;
       left: 0;
       box-sizing: border-box;
+      /* Removed border-bottom here to avoid conflict, line is now on .header-top */
+    }
+
+    .header-top,
+    .header-bottom {
+      background: none !important;
+      /* override any variable background */
+    }
+
+    .footer {
+      background-color: #ffffff;
     }
 
     @media (min-width: 481px) and (max-width: 1024px) {
@@ -58,29 +85,34 @@
 
     /* Espaço para o conteúdo não ficar por baixo do header fixo */
     main {
-      padding-top: 60px; /* valor base para cabeçalho grande */
+      padding-top: 60px;
+      /* valor base para cabeçalho grande */
     }
 
     @media (min-width: 481px) and (max-width: 1024px) {
       main {
-        padding-top: 50px; /* ajuste para cabeçalho médio */
+        padding-top: 50px;
+        /* ajuste para cabeçalho médio */
       }
     }
 
     @media (max-width: 480px) {
       main {
-        padding-top: 40px; /* ajuste para cabeçalho pequeno */
+        padding-top: 40px;
+        /* ajuste para cabeçalho pequeno */
       }
     }
   </style>
+</head>
 
+<body id="top">
   <!-- header -->
   <header class="header" data-header>
     <div class="overlay" data-overlay></div>
     <div class="header-top">
       <div class="container">
         <div class="header-btn-group">
-          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn style="color: #000000;">
             <ion-icon name="menu-outline"></ion-icon>
           </button>
         </div>
@@ -91,7 +123,7 @@
         <nav class="navbar" data-navbar>
           <div class="navbar-top">
             <a href="#" class="logo">
-              <img src="./assets/imagens/logoAzul.png" alt="Tourly logo">
+              <img src="./assets/imagens/logoAzul.png" alt="Tourly logo" />
             </a>
             <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
               <ion-icon name="close-outline"></ion-icon>
@@ -120,7 +152,6 @@
     <article>
       <!-- hero -->
 
-
       <!-- desconto -->
       <section class="package" id="package" style="margin-top: 20px;">
         <div class="container">
@@ -129,12 +160,11 @@
             Destinos para uma viagem inesquecível com experiências únicas e inclusivas.
           </p>
           <ul class="package-list">
-
             <li>
               <div class="package-card">
                 <figure class="card-banner">
                   <img src="./assets/imagens/amantikirCJ.jpg" alt="Experience The Great Holiday On Beach"
-                    loading="lazy">
+                    loading="lazy" />
                 </figure>
                 <div class="card-content">
                   <h3 class="h3 card-title">Casagrande Olímpia Hotel</h3>
@@ -182,7 +212,6 @@
                 </div>
               </div>
             </li>
-
           </ul>
           <button class="btn btn-primary">Veja mais</button>
         </div>
@@ -198,11 +227,10 @@
             vel feugiat nisl tempor.
           </p>
           <ul class="popular-list">
-
             <li>
               <div class="popular-card">
                 <figure class="card-img">
-                  <img src="./assets/imagens/thermasO.jpg" alt="San miguel, italy" loading="lazy">
+                  <img src="./assets/imagens/thermasO.jpg" alt="San miguel, italy" loading="lazy" />
                 </figure>
                 <div class="card-content">
                   <div class="card-rating">
@@ -228,7 +256,7 @@
             <li>
               <div class="popular-card">
                 <figure class="card-img">
-                  <img src="./assets/imagens/duchaCJ.jpg" alt="San miguel, italy" loading="lazy">
+                  <img src="./assets/imagens/duchaCJ.jpg" alt="San miguel, italy" loading="lazy" />
                 </figure>
                 <div class="card-content">
                   <div class="card-rating">
@@ -254,7 +282,7 @@
             <li>
               <div class="popular-card">
                 <figure class="card-img">
-                  <img src="./assets/imagens/jaymeV.png" alt="San miguel, italy" loading="lazy">
+                  <img src="./assets/imagens/jaymeV.png" alt="San miguel, italy" loading="lazy" />
                 </figure>
                 <div class="card-content">
                   <div class="card-rating">
@@ -276,7 +304,6 @@
                 </div>
               </div>
             </li>
-
           </ul>
           <button class="btn btn-primary">Veja mais</button>
         </div>
@@ -294,33 +321,32 @@
           <ul class="gallery-list">
             <li class="gallery-item">
               <figure class="gallery-image">
-                <img src="./assets/imagens/gallery-1.jpg" alt="Gallery image">
+                <img src="./assets/imagens/gallery-1.jpg" alt="Gallery image" />
               </figure>
             </li>
             <li class="gallery-item">
               <figure class="gallery-image">
-                <img src="./assets/imagens/gallery-2.jpg" alt="Gallery image">
+                <img src="./assets/imagens/gallery-2.jpg" alt="Gallery image" />
               </figure>
             </li>
             <li class="gallery-item">
               <figure class="gallery-image">
-                <img src="./assets/imagens/gallery-3.jpg" alt="Gallery image">
+                <img src="./assets/imagens/gallery-3.jpg" alt="Gallery image" />
               </figure>
             </li>
             <li class="gallery-item">
               <figure class="gallery-image">
-                <img src="./assets/imagens/gallery-4.jpg" alt="Gallery image">
+                <img src="./assets/imagens/gallery-4.jpg" alt="Gallery image" />
               </figure>
             </li>
             <li class="gallery-item">
               <figure class="gallery-image">
-                <img src="./assets/imagens/gallery-5.jpg" alt="Gallery image">
+                <img src="./assets/imagens/gallery-5.jpg" alt="Gallery image" />
               </figure>
             </li>
           </ul>
         </div>
       </section>
-
     </article>
   </main>
 
@@ -330,12 +356,12 @@
       <div class="container">
         <div class="footer-brand">
           <a href="#" class="logo">
-            <img src="./assets/imagens/logo.svg" alt="Tourly logo">
+            <img src="./assets/imagens/logo.svg" alt="Tourly logo" />
           </a>
           <p class="footer-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor tincidunt,
-            vel feugiat nisl tempor. Integer nec risus id nisi tempor varius ac nec nisi. Sed vitae volutpat odio.
-            Aenean luctus justo vel velit dapibus, et feugiat nisi vehicula.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor
+            tincidunt, vel feugiat nisl tempor. Integer nec risus id nisi tempor varius ac nec nisi. Sed vitae volutpat
+            odio. Aenean luctus justo vel velit dapibus, et feugiat nisi vehicula.
           </p>
         </div>
         <div class="footer-contact">
@@ -363,7 +389,7 @@
             Fique por dentro de todas as novidades
           </p>
           <form action="" class="form-wrapper">
-            <input type="email" name="email" class="input-field" placeholder="Digite seu e-mail" required>
+            <input type="email" name="email" class="input-field" placeholder="Digite seu e-mail" required />
             <button type="submit" class="btn btn-secondary">Cadastrar</button>
           </form>
         </div>
