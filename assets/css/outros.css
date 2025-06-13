@@ -392,52 +392,24 @@ body {
   margin-bottom: 10px;
 }
 
-/* tour search */
-.tour-search {
-  background: var(--bright-navy-blue);
-  padding-block: 27px;
-}
-
-.tour-search-form .input-label {
-  color: var(--white);
-  font-size: var(--fs-4);
-  margin-left: 20px;
-  margin-bottom: 10px;
-}
-
-.tour-search-form .input-field {
-  background: var(--white);
-  padding: 10px 15px;
-  font-size: var(--fs-5);
-  border-radius: 50px;
-}
-
-.tour-search-form .input-field::placeholder {
-  color: var(--spanish-gray);
-}
-
-.tour-search-form .input-field::-webkit-datetime-edit {
-  color: var(--spanish-gray);
-  text-transform: uppercase;
-}
-
-.tour-search-form .input-wrapper {
-  margin-bottom: 15px;
-}
-
-.tour-search .btn {
-  width: 100%;
-  --border-width: 1px;
-  font-weight: var(--fw-600);
-  margin-top: 35px;
-}
-
 /* popular */
 .popular {
   padding-block: var(--section-padding);
 }
 
-.popular-list,
+.popular-list {
+  margin-bottom: 30px;
+  display: flex;           /* Use flexbox para layout em linha */
+  overflow-x: auto;        /* Permite rolagem horizontal */
+  gap: 20px;               /* Espaçamento horizontal entre os cards */
+  padding: 10px 0;         /* Espaçamento vertical */
+  white-space: nowrap;     /* Opcional quando usando flex */
+}
+
+.popular-list > li {
+  flex: 0 0 auto;          /* Garantir largura fixa e impedir quebra */
+}
+
 .popular-list>li:not(:last-child) {
   margin-bottom: 30px;
 }
@@ -510,10 +482,17 @@ body {
 
 .package-list {
   margin-bottom: 40px;
+  overflow-x: auto; /* permite rolagem horizontal */
+  white-space: nowrap; /* impede a quebra de linha */
+  padding: 10px 0; /* adiciona um pouco de espaço ao redor */
 }
 
-.package-list>li:not(:last-child) {
-  margin-bottom: 30px;
+.package-list > li {
+  display: inline-block; /* Permite que os cards sejam exibidos em linha */
+  margin-right: 20px; /* Espaçamento entre os cards */
+}
+.package-list > li:last-child {
+  margin-right: 0; /* remove margem do último card */
 }
 
 .package-card {
@@ -1008,12 +987,12 @@ address {
   }
 
   /* popular */
-  .popular-list {
+  /* .popular-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin-bottom: 50px;
-  }
+  } */
 
   .popular-list>li:not(:last-child) {
     margin-bottom: 0;
