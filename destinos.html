@@ -6,103 +6,88 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Destinos</title>
-  <link rel="shortcut icon" href="./assets/imagens/favicon.png" type="image/svg+xml" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="shortcut icon" href="./assets/imagens/icon.png" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
 
-  <style>
-    /* Header Top styles adjusted for white background and subtle translucent border */
-    .header-top {
-      background-color: #ffffff;
-      /* solid white background to avoid blue tint */
-      position: fixed;
-      /* fix header at top */
-      top: 0;
-      left: 0;
-      width: 100%;
-      border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
-      /* subtle translucent white bottom line */
-      padding-block: 5px;
-      /* vertical padding */
-      z-index: 100;
-      /* place above page content */
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-      /* subtle shadow for visual separation */
-    }
+<style>
+  :root {
+    --header-height: 80px;
+    --transition: 0.3s ease;
+  }
 
+  /* Header superior fixo */
+  .header-top {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-block: 5px;
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    z-index: 101;
+    transition: var(--transition);
+  }
+
+  /* Header principal */
+  .header {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    min-height: var(--header-height);
+    line-height: var(--header-height);
+    padding: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    box-sizing: border-box;
+    z-index: 100;
+  }
+
+  /* Remove fundo azul de qualquer classe reutilizada */
+  .header-top,
+  .header-bottom {
+    background: none !important;
+  }
+
+  /* Espaço para o conteúdo não ficar atrás do header */
+  main {
+    padding-top: var(--header-height);
+  }
+
+  /* Responsividade */
+  @media (max-width: 768px) {
     .header {
-      background-color: #ffffff;
-      transition: none !important;
-      padding: 10px;
-      /* Grande por padrão */
-      color: white;
-      text-align: center;
-      font-size: 1.5rem;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      box-sizing: border-box;
-      /* Removed border-bottom here to avoid conflict, line is now on .header-top */
+      font-size: 1.2rem;
     }
+  }
 
-    .header-top,
-    .header-bottom {
-      background: none !important;
-      /* override any variable background */
+  @media (max-width: 480px) {
+    .header {
+      font-size: 1rem;
     }
+  }
 
-    .footer {
-      background-color: #ffffff;
-    }
+  /* Remove sombra do header-top quando o overlay está ativo (menu mobile aberto) */
+  [data-overlay].active + .header-top {
+    box-shadow: none;
+  }
 
-    @media (min-width: 481px) and (max-width: 1024px) {
-      .header {
-        padding: 10px;
-        /* padding menor e mais fino */
-        font-size: 1.2rem;
-      }
-    }
-
-    /* Reduz apenas quando a tela for menor que 768px */
-    @media (max-width: 768px) {
-      .header {
-        padding: 10px;
-        font-size: 1.2rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .header {
-        padding: 5px;
-        font-size: 1rem;
-      }
-    }
-
-    /* Espaço para o conteúdo não ficar por baixo do header fixo */
-    main {
-      padding-top: 60px;
-      /* valor base para cabeçalho grande */
-    }
-
-    @media (min-width: 481px) and (max-width: 1024px) {
-      main {
-        padding-top: 50px;
-        /* ajuste para cabeçalho médio */
-      }
-    }
-
-    @media (max-width: 480px) {
-      main {
-        padding-top: 40px;
-        /* ajuste para cabeçalho pequeno */
-      }
-    }
-  </style>
+  /* Footer segue com fundo branco */
+  .footer {
+    background-color: #ffffff;
+  }
+</style>
 </head>
 
 <body id="top">
@@ -163,7 +148,7 @@
             <li>
               <div class="package-card">
                 <figure class="card-banner">
-                  <img src="./assets/imagens/amantikirCJ.jpg" alt="Experience The Great Holiday On Beach"
+                  <img src="./assets/imagens/hotel.jpg" alt="Experience The Great Holiday On Beach"
                     loading="lazy" />
                 </figure>
                 <div class="card-content">
