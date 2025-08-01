@@ -1,5 +1,11 @@
 :root {
   /* cores */
+  --cor1: hsl(208, 64%, 57%);
+  --cor2: hsl(203, 62%, 61%);
+  --cor3: hsl(191, 96%, 33%);
+  --cor4: hsl(180, 96%, 38%);
+  --cor5: hsl(174, 96%, 33%);
+  
   --bright-navy-blue: hsl(214, 73%, 36%);
   --spanish-gray: hsl(0, 0%, 60%);
   --black-coral: hsl(225, 8%, 42%);

@@ -1,5 +1,11 @@
 :root {
   /* cores */
+  --azulJeans: hsl(208, 64%, 57%);
+  --azulBebe: hsl(203, 62%, 61%);
+  --bujao: hsl(191, 96%, 33%);
+  --tiffany: hsl(180, 96%, 38%);
+  --turquesa: hsl(174, 96%, 33%);
+
   --bright-navy-blue: hsl(214, 73%, 36%);
   --spanish-gray: hsl(0, 0%, 60%);
   --black-coral: hsl(225, 8%, 42%);
