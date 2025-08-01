@@ -32,7 +32,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Carousel functionality
+// Carousel functionality - mantém layout original
 function initCarousel(carouselId, prevBtnId, nextBtnId) {
   const carousel = document.getElementById(carouselId);
   const prevBtn = document.getElementById(prevBtnId);
@@ -40,47 +40,78 @@ function initCarousel(carouselId, prevBtnId, nextBtnId) {
   
   if (!carousel || !prevBtn || !nextBtn) return;
   
-  const scrollAmount = 320; // Width of one item plus gap
+  const items = carousel.querySelectorAll('li');
+  let currentIndex = 0;
   
-  function scrollPrev() {
-    carousel.scrollBy({
-      left: -scrollAmount,
-      behavior: 'smooth'
+  // Ativa o modo carousel apenas quando necessário
+  function activateCarousel() {
+    carousel.classList.add('carousel-active');
+    items.forEach((item, index) => {
+      item.classList.toggle('active', index === currentIndex);
     });
   }
   
-  function scrollNext() {
-    carousel.scrollBy({
-      left: scrollAmount,
-      behavior: 'smooth'
+  // Mostra todos os itens (layout original)
+  function deactivateCarousel() {
+    carousel.classList.remove('carousel-active');
+    items.forEach(item => {
+      item.classList.remove('active');
     });
   }
   
-  prevBtn.addEventListener('click', scrollPrev);
-  nextBtn.addEventListener('click', scrollNext);
+  // Se há poucos itens, não ativa o carousel
+  if (items.length <= 1) {
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+    return;
+  }
+  
+  // Ativa o carousel
+  activateCarousel();
+  
+  function goToPrev() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  }
+  
+  function goToNext() {
+    if (currentIndex < items.length - 1) {
+      currentIndex++;
+      updateCarousel();
+    }
+  }
+  
+  function updateCarousel() {
+    items.forEach((item, index) => {
+      item.classList.toggle('active', index === currentIndex);
+    });
+    updateArrows();
+  }
+  
+  prevBtn.addEventListener('click', goToPrev);
+  nextBtn.addEventListener('click', goToNext);
   
   // Keyboard navigation
   prevBtn.addEventListener('keydown', function(e) {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      scrollPrev();
+      goToPrev();
     }
   });
   
   nextBtn.addEventListener('keydown', function(e) {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      scrollNext();
+      goToNext();
     }
   });
   
-  // Show/hide arrows based on scroll position
+  // Show/hide arrows based on current position
   function updateArrows() {
-    const scrollLeft = carousel.scrollLeft;
-    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-    
-    const isPrevDisabled = scrollLeft <= 0;
-    const isNextDisabled = scrollLeft >= maxScroll;
+    const isPrevDisabled = currentIndex === 0;
+    const isNextDisabled = currentIndex === items.length - 1;
     
     prevBtn.style.opacity = isPrevDisabled ? '0.5' : '1';
     prevBtn.style.cursor = isPrevDisabled ? 'not-allowed' : 'pointer';
@@ -91,8 +122,16 @@ function initCarousel(carouselId, prevBtnId, nextBtnId) {
     nextBtn.setAttribute('aria-disabled', isNextDisabled);
   }
   
-  carousel.addEventListener('scroll', updateArrows);
-  window.addEventListener('resize', updateArrows);
+  // Auto-rotate (opcional - descomente se quiser rotação automática)
+  // setInterval(() => {
+  //   if (currentIndex < items.length - 1) {
+  //     goToNext();
+  //   } else {
+  //     currentIndex = 0;
+  //     updateCarousel();
+  //   }
+  // }, 5000);
+  
   updateArrows(); // Initial call
 }
 

@@ -1299,58 +1299,142 @@ address {
   right: 10px;
 }
 
-/* Ajustes para listas horizontais */
-.package-list,
+/* Carousel navegação - mantém layout original */
+.carousel-wrapper {
+  position: relative;
+}
+
+/* Hotéis - Layout vertical original com navegação */
+.package-list {
+  margin-bottom: 40px;
+}
+
+.package-list > li {
+  margin-bottom: 30px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+}
+
+.package-list > li:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.package-list.carousel-active {
+  display: block;
+}
+
+.package-list.carousel-active > li {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.package-list.carousel-active > li.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Destinos - Layout vertical original com navegação */
 .popular-list {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 20px;
-  padding: 20px 0;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 
-.package-list::-webkit-scrollbar,
-.popular-list::-webkit-scrollbar {
-  display: none;
-}
-
-.package-list > li,
 .popular-list > li {
-  flex: 0 0 auto;
-  width: 300px;
-  margin-bottom: 0;
+  margin-bottom: 30px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
 }
 
-.package-list > li:not(:last-child),
 .popular-list > li:not(:last-child) {
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 
-.gallery-list {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 15px;
-  padding: 20px 0;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+.popular-list.carousel-active {
+  display: block;
 }
 
-.gallery-list::-webkit-scrollbar {
+.popular-list.carousel-active > li {
   display: none;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.popular-list.carousel-active > li.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Galeria - Grid original com navegação */
+.gallery-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  transition: all 0.3s ease;
 }
 
 .gallery-item {
-  flex: 0 0 auto;
-  width: 250px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease;
 }
 
 .gallery-item:nth-child(3) {
+  grid-area: 1 / 2 / 3 / 3;
+}
+
+.gallery-list.carousel-active {
+  display: block;
+}
+
+.gallery-list.carousel-active .gallery-item {
+  display: none;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.gallery-list.carousel-active .gallery-item.active {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+  animation: fadeInScale 0.5s ease-out;
+}
+
+.gallery-list.carousel-active .gallery-item:nth-child(3) {
   grid-area: unset;
+}
+
+/* Animações */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 768px) {
