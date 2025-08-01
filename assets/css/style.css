@@ -1248,3 +1248,125 @@ address {
     font-size: 40px;
   }
 }
+
+/* Carousel Styles */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bright-navy-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition);
+  font-size: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-arrow:hover {
+  background: var(--yale-blue);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+/* Ajustes para listas horizontais */
+.package-list,
+.popular-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-bottom: 0;
+}
+
+.package-list::-webkit-scrollbar,
+.popular-list::-webkit-scrollbar {
+  display: none;
+}
+
+.package-list > li,
+.popular-list > li {
+  flex: 0 0 auto;
+  width: 300px;
+  margin-bottom: 0;
+}
+
+.package-list > li:not(:last-child),
+.popular-list > li:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.gallery-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 15px;
+  padding: 20px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.gallery-list::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-item {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 200px;
+}
+
+.gallery-item:nth-child(3) {
+  grid-area: unset;
+}
+
+@media (max-width: 768px) {
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .package-list > li,
+  .popular-list > li {
+    width: 280px;
+  }
+  
+  .gallery-item {
+    width: 200px;
+    height: 150px;
+  }
+}
