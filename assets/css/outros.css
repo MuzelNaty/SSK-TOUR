@@ -1,11 +1,11 @@
 :root {
   /* cores */
-  --cor1: hsl(208, 64%, 57%);
-  --cor2: hsl(203, 62%, 61%);
-  --cor3: hsl(191, 96%, 33%);
-  --cor4: hsl(180, 96%, 38%);
-  --cor5: hsl(174, 96%, 33%);
-  
+  --azulJeans: hsl(208, 64%, 57%);
+  --azulBebe: hsl(203, 62%, 61%);
+  --bujao: hsl(191, 96%, 33%);
+  --tiffany: hsl(180, 96%, 38%);
+  --turquesa: hsl(174, 96%, 33%);
+
   --bright-navy-blue: hsl(214, 73%, 36%);
   --spanish-gray: hsl(0, 0%, 60%);
   --black-coral: hsl(225, 8%, 42%);
@@ -25,7 +25,7 @@
   --ff-poppins: "Poppins", sans-serif;
   --ff-montserrat: "Montserrat", sans-serif;
   --fs-1: calc(20px + 3.5vw);
-  --fs-2: calc(14px + 1.5vw);
+  --fs-2: calc(18px + 1.6vw);
   --fs-3: calc(12px + 0.45vw);
   --fs-4: 15px;
   --fs-5: 14px;
@@ -186,22 +186,13 @@ body {
 
 /* header */
 .header {
+  background-color: var(--azulJeans);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   padding-top: 50px;
   z-index: 4;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color: hsla(0, 0%, 60%, 0.913);
-  background-blend-mode: overlay;
-  display: grid;
-  place-items: center;
-  min-height: 10vh;
-  text-align: center;
-  padding-top: 12px;
 }
 
 .header-top {
@@ -382,50 +373,12 @@ body {
   pointer-events: all;
 }
 
-/* hero */
-.hero {
-  background-image: url("../imagens/hotell.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color: hsla(0, 0%, 0%, 0.7);
-  background-blend-mode: overlay;
-  display: grid;
-  place-items: center;
-  min-height: 80vh;
-  text-align: center;
-  padding-top: 12px;
-}
-
-.hero-title {
-  margin-bottom: 20px;
-  font-size: 70px;
-}
-
-.hero-text {
-  color: var(--white);
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
 /* popular */
 .popular {
   padding-block: var(--section-padding);
 }
 
-.popular-list {
-  margin-bottom: 30px;
-  display: flex;           /* Use flexbox para layout em linha */
-  overflow-x: auto;        /* Permite rolagem horizontal */
-  gap: 20px;               /* Espaçamento horizontal entre os cards */
-  padding: 10px 0;         /* Espaçamento vertical */
-  white-space: nowrap;     /* Opcional quando usando flex */
-}
-
-.popular-list > li {
-  flex: 0 0 auto;          /* Garantir largura fixa e impedir quebra */
-}
-
+.popular-list,
 .popular-list>li:not(:last-child) {
   margin-bottom: 30px;
 }
@@ -498,17 +451,10 @@ body {
 
 .package-list {
   margin-bottom: 40px;
-  overflow-x: auto; /* permite rolagem horizontal */
-  white-space: nowrap; /* impede a quebra de linha */
-  padding: 10px 0; /* adiciona um pouco de espaço ao redor */
 }
 
-.package-list > li {
-  display: inline-block; /* Permite que os cards sejam exibidos em linha */
-  margin-right: 20px; /* Espaçamento entre os cards */
-}
-.package-list > li:last-child {
-  margin-right: 0; /* remove margem do último card */
+.package-list>li:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 .package-card {
@@ -1003,12 +949,12 @@ address {
   }
 
   /* popular */
-  /* .popular-list {
+  .popular-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin-bottom: 50px;
-  } */
+  }
 
   .popular-list>li:not(:last-child) {
     margin-bottom: 0;
