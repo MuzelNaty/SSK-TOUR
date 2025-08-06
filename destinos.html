@@ -16,74 +16,6 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
 
-<style>
-
-  /* Header superior fixo */
-  .header-top {
-    background-color: #ffffff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-block: 5px;
-    border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-    z-index: 101;
-    transition: var(--transition);
-  }
-
-  /* Header principal */
-  .header {
-    background-color: #ffffff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--header-height);
-    min-height: var(--header-height);
-    line-height: var(--header-height);
-    padding: 0;
-    text-align: center;
-    font-size: 1.5rem;
-    color: black;
-    box-sizing: border-box;
-    z-index: 100;
-  }
-
-  /* Remove fundo azul de qualquer classe reutilizada */
-  .header-top,
-  .header-bottom {
-    background: none !important;
-  }
-
-  /* Espaço para o conteúdo não ficar atrás do header */
-  main {
-    padding-top: var(--header-height);
-  }
-
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .header {
-      font-size: 1.2rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .header {
-      font-size: 1rem;
-    }
-  }
-
-  /* Remove sombra do header-top quando o overlay está ativo (menu mobile aberto) */
-  [data-overlay].active + .header-top {
-    box-shadow: none;
-  }
-
-  /* Footer segue com fundo branco */
-  .footer {
-    background-color: #ffffff;
-  }
-</style>
 </head>
 
 <body id="top">
@@ -148,7 +80,7 @@
                     loading="lazy" />
                 </figure>
                 <div class="card-content">
-                  <h3 class="h3 card-title">Casagrande Olímpia Hotel</h3>
+                  <h3 class="h3 card-title">Guarujá</h3>
                   <p class="card-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis ligula sed dolor
                     tincidunt, vel feugiat nisl tempor.
