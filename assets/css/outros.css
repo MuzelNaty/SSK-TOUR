@@ -1189,3 +1189,142 @@ address {
     font-size: 40px;
   }
 }
+
+/* Estilos para navegação de hotéis */
+.hotel-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+  padding: 20px;
+}
+
+.nav-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--azulJeans);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--azulJeans);
+  font-size: 24px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.1);
+}
+
+.nav-arrow:hover {
+  background: var(--azulJeans);
+  color: var(--white);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px hsla(0, 0%, 0%, 0.15);
+}
+
+.nav-arrow:active {
+  transform: scale(0.95);
+}
+
+.nav-arrow.disabled,
+.nav-arrow:disabled {
+  background: var(--gainsboro);
+  color: var(--spanish-gray);
+  border-color: var(--gainsboro);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.nav-arrow.disabled:hover,
+.nav-arrow:disabled:hover {
+  background: var(--gainsboro);
+  color: var(--spanish-gray);
+  transform: none;
+}
+
+.page-indicator {
+  font-family: var(--ff-montserrat);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  color: var(--oxford-blue);
+  background: var(--cultured);
+  padding: 8px 16px;
+  border-radius: var(--radius-25);
+  border: 1px solid var(--gainsboro);
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Container dos hotéis */
+.hotels-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.hotel-page {
+  display: none;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.4s ease-in-out;
+}
+
+.hotel-page.active {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0);
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsividade para navegação */
+@media (max-width: 768px) {
+  .hotel-navigation {
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px;
+  }
+  
+  .nav-arrow {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+  
+  .page-indicator {
+    font-size: var(--fs-6);
+    padding: 6px 12px;
+    min-width: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hotel-navigation {
+    gap: 10px;
+    margin: 15px 0;
+    padding: 10px;
+  }
+  
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .page-indicator {
+    font-size: var(--fs-7);
+    padding: 5px 10px;
+    min-width: 60px;
+  }
+}

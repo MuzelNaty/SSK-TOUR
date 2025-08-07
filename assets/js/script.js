@@ -31,3 +31,100 @@ window.addEventListener("scroll", function () {
     goTopBtn.classList.remove("active");
   }
 });
+
+// Sistema de paginação para hotéis
+document.addEventListener("DOMContentLoaded", function() {
+  const prevButton = document.getElementById("prevButton");
+  const nextButton = document.getElementById("nextButton");
+  const pageIndicator = document.getElementById("pageIndicator");
+  const hotelPages = document.querySelectorAll(".hotel-page");
+  
+  let currentPage = 1;
+  const totalPages = hotelPages.length;
+  
+  function updatePagination() {
+    // Ocultar todas as páginas
+    hotelPages.forEach(page => {
+      page.classList.remove("active");
+    });
+    
+    // Mostrar página atual
+    const currentPageElement = document.querySelector(`[data-page="${currentPage}"]`);
+    if (currentPageElement) {
+      currentPageElement.classList.add("active");
+    }
+    
+    // Atualizar indicador de página
+    pageIndicator.textContent = `${currentPage} / ${totalPages}`;
+    
+    // Controlar estado dos botões
+    prevButton.disabled = (currentPage === 1);
+    nextButton.disabled = (currentPage === totalPages);
+    
+    // Adicionar classes visuais para botões desabilitados
+    if (currentPage === 1) {
+      prevButton.classList.add("disabled");
+    } else {
+      prevButton.classList.remove("disabled");
+    }
+    
+    if (currentPage === totalPages) {
+      nextButton.classList.add("disabled");
+    } else {
+      nextButton.classList.remove("disabled");
+    }
+  }
+  
+  function nextPage() {
+    if (currentPage < totalPages) {
+      currentPage++;
+      updatePagination();
+      
+      // Animação suave para a seção de hotéis
+      const hotelsContainer = document.querySelector(".hotels-container");
+      if (hotelsContainer) {
+        hotelsContainer.scrollIntoView({ 
+          behavior: "smooth", 
+          block: "nearest" 
+        });
+      }
+    }
+  }
+  
+  function prevPage() {
+    if (currentPage > 1) {
+      currentPage--;
+      updatePagination();
+      
+      // Animação suave para a seção de hotéis
+      const hotelsContainer = document.querySelector(".hotels-container");
+      if (hotelsContainer) {
+        hotelsContainer.scrollIntoView({ 
+          behavior: "smooth", 
+          block: "nearest" 
+        });
+      }
+    }
+  }
+  
+  // Event listeners para os botões
+  if (nextButton) {
+    nextButton.addEventListener("click", nextPage);
+  }
+  
+  if (prevButton) {
+    prevButton.addEventListener("click", prevPage);
+  }
+  
+  // Navegação por teclado (opcional)
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowLeft") {
+      prevPage();
+    } else if (event.key === "ArrowRight") {
+      nextPage();
+    }
+  });
+  
+  // Inicializar paginação
+  updatePagination();
+});

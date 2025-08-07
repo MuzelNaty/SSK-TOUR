@@ -122,134 +122,410 @@
         </div>
         <div class="container">
           <h2 class="h2 section-title">Hotéis em São Paulo</h2>
-          <ul class="popular-list">
-            <li>
-              <div class="popular-card">
-                <figure class="card-img">
-                  <img src="./assets/imagens/exemplo.png" alt="San miguel, italy" loading="lazy">
-                </figure>
-                <div class="card-content">
-                  <div class="card-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
+          
+          <!-- Controles de navegação -->
+          <div class="hotel-navigation">
+            <button class="nav-arrow prev-arrow" id="prevButton" disabled>
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <span class="page-indicator" id="pageIndicator">1 / 3</span>
+            <button class="nav-arrow next-arrow" id="nextButton">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+          </div>
+
+          <!-- Container para os hotéis com paginação -->
+          <div class="hotels-container">
+            <!-- Página 1 - Hotéis iniciais -->
+            <ul class="popular-list hotel-page active" data-page="1">
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src="./assets/imagens/exemplo.png" alt="Hotel Copacabana Palace" loading="lazy">
+                  </figure>
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">
+                      <a href="#">Hotel Copacabana Palace</a>
+                    </h3>
+                    <p class="card-text">
+                      Luxuoso hotel 5 estrelas na região central de São Paulo.
+                    </p>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+                          <p class="text">7 dias</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+                          <p class="text">10 pessoas</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+                          <p class="text">São Paulo</p>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
-                  <h3 class="h3 card-title">
-                    <a href="#">Hotel 1</a>
-                  </h3>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                  <ul class="card-meta-list">
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="time"></ion-icon>
-                        <p class="text">7 dias</p>
-                      </div>
-                    </li>
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="people"></ion-icon>
-                        <p class="text">10 pessoas</p>
-                      </div>
-                    </li>
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="location"></ion-icon>
-                        <p class="text">São Paulo</p>
-                      </div>
-                    </li>
-                  </ul>
                 </div>
-              </div>
-            </li>
-            <li>
-              <div class="popular-card">
-                <figure class="card-img">
-                  <img src="./assets/imagens/exemplo.png" alt="San miguel, italy" loading="lazy">
-                </figure>
-                <div class="card-content">
-                  <div class="card-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
+              </li>
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src="./assets/imagens/exemplo.png" alt="Hotel Intercontinental" loading="lazy">
+                  </figure>
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">
+                      <a href="#">Hotel Intercontinental</a>
+                    </h3>
+                    <p class="card-text">
+                      Hotel moderno com vista panorâmica da cidade.
+                    </p>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+                          <p class="text">5 dias</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+                          <p class="text">8 pessoas</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+                          <p class="text">São Paulo</p>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
-                  <h3 class="h3 card-title">
-                    <a href="#">Hotel 2</a>
-                  </h3>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                  <ul class="card-meta-list">
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="time"></ion-icon>
-                        <p class="text">7 dias</p>
-                      </div>
-                    </li>
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="people"></ion-icon>
-                        <p class="text">10 pessoas</p>
-                      </div>
-                    </li>
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="location"></ion-icon>
-                        <p class="text">São Paulo</p>
-                      </div>
-                    </li>
-                  </ul>
                 </div>
-              </div>
-            </li>
-            <li>
-              <div class="popular-card">
-                <figure class="card-img">
-                  <img src="./assets/imagens/exemplo.png" alt="San miguel, italy" loading="lazy">
-                </figure>
-                <div class="card-content">
-                  <div class="card-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
+              </li>
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src="./assets/imagens/exemplo.png" alt="Hotel Renaissance" loading="lazy">
+                  </figure>
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">
+                      <a href="#">Hotel Renaissance</a>
+                    </h3>
+                    <p class="card-text">
+                      Hotel boutique no coração da Vila Madalena.
+                    </p>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+                          <p class="text">3 dias</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+                          <p class="text">6 pessoas</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+                          <p class="text">São Paulo</p>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
-                  <h3 class="h3 card-title">
-                    <a href="#">Hotel 3</a>
-                  </h3>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                  <ul class="card-meta-list">
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="time"></ion-icon>
-                        <p class="text">7 dias</p>
-                      </div>
-                    </li>
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="people"></ion-icon>
-                        <p class="text">10 pessoas</p>
-                      </div>
-                    </li>
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="location"></ion-icon>
-                        <p class="text">São Paulo</p>
-                      </div>
-                    </li>
-                  </ul>
                 </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+
+            <!-- Página 2 - Mais hotéis -->
+            <ul class="popular-list hotel-page" data-page="2">
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src="./assets/imagens/exemplo.png" alt="Hotel Unique" loading="lazy">
+                  </figure>
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">
+                      <a href="#">Hotel Unique</a>
+                    </h3>
+                    <p class="card-text">
+                      Design arrojado com arquitetura contemporânea única.
+                    </p>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+                          <p class="text">4 dias</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+                          <p class="text">12 pessoas</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+                          <p class="text">São Paulo</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src="./assets/imagens/exemplo.png" alt="Grand Hyatt São Paulo" loading="lazy">
+                  </figure>
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">
+                      <a href="#">Grand Hyatt São Paulo</a>
+                    </h3>
+                    <p class="card-text">
+                      Elegância e sofisticação na Marginal Pinheiros.
+                    </p>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+                          <p class="text">6 dias</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+                          <p class="text">15 pessoas</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+                          <p class="text">São Paulo</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src="./assets/imagens/exemplo.png" alt="Hotel Fasano" loading="lazy">
+                  </figure>
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">
+                      <a href="#">Hotel Fasano</a>
+                    </h3>
+                    <p class="card-text">
+                      Luxo e tradição italiana nos Jardins.
+                    </p>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+                          <p class="text">5 dias</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+                          <p class="text">8 pessoas</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+                          <p class="text">São Paulo</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Página 3 - Ainda mais hotéis -->
+            <ul class="popular-list hotel-page" data-page="3">
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src="./assets/imagens/exemplo.png" alt="Hotel Emiliano" loading="lazy">
+                  </figure>
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">
+                      <a href="#">Hotel Emiliano</a>
+                    </h3>
+                    <p class="card-text">
+                      Design minimalista e serviço impecável.
+                    </p>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+                          <p class="text">7 dias</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+                          <p class="text">6 pessoas</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+                          <p class="text">São Paulo</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src="./assets/imagens/exemplo.png" alt="Tivoli Mofarrej" loading="lazy">
+                  </figure>
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">
+                      <a href="#">Tivoli Mofarrej</a>
+                    </h3>
+                    <p class="card-text">
+                      Charme clássico no coração dos Jardins.
+                    </p>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+                          <p class="text">4 dias</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+                          <p class="text">10 pessoas</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+                          <p class="text">São Paulo</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src="./assets/imagens/exemplo.png" alt="WZ Hotel Jardins" loading="lazy">
+                  </figure>
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">
+                      <a href="#">WZ Hotel Jardins</a>
+                    </h3>
+                    <p class="card-text">
+                      Modernidade e conforto na Rua Augusta.
+                    </p>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+                          <p class="text">3 dias</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+                          <p class="text">8 pessoas</p>
+                        </div>
+                      </li>
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+                          <p class="text">São Paulo</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </article>
