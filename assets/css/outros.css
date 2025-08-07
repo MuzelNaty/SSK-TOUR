@@ -25,7 +25,7 @@
   --ff-poppins: "Poppins", sans-serif;
   --ff-montserrat: "Montserrat", sans-serif;
   --fs-1: calc(20px + 3.5vw);
-  --fs-2: calc(18px + 1.6vw);
+  --fs-2: calc(15px + 1.2vw);
   --fs-3: calc(12px + 0.45vw);
   --fs-4: 15px;
   --fs-5: 14px;
@@ -186,7 +186,7 @@ body {
 
 /* header */
 .header {
-  background-color: var(--azulJeans);
+  background-color: var(--yale-blue);
   position: absolute;
   top: 0;
   left: 0;
